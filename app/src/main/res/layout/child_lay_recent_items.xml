@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable name="index"
+            type="Integer" />
+
+        <!--<variable
+            name="item"
+            type="com.aamod.bukish.models.CategoryItemResBean" />-->
+
+        <variable name="OnItemClickListener"
+            type="com.book.donation.adapter.BookCategoryAdapter.ItemClickListener" />
+
+        <import type="android.view.View" />
+
+        <!--<import type="com.medicalworld.extra.Constants" />-->
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dp_10"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/dp_5"
+        app:cardBackgroundColor="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_5"
+            android:onClick="@{(view) -> OnItemClickListener.OnItemClicked(index)}">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/dp_10"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgBook"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/demo_profile"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:id="@+id/imgHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/demo_profile"
+                    android:adjustViewBounds="true"
+                    android:layout_margin="@dimen/dp_10"
+                    android:visibility="gone"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtBookName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_12"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/gray4"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:maxLines="1"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardImage"/>
+
+            <TextView
+                android:id="@+id/txtBookDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_10"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/gray2"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:maxLines="1"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBookName"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgLocation"
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="@dimen/dp_15"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/ic_location"
+                android:scaleType="fitXY"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBookDetails"/>
+
+            <TextView
+                android:id="@+id/txtAddressDistance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_10"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/gray2"
+                android:paddingStart="@dimen/dp_5"
+                android:paddingEnd="@dimen/dp_10"
+                android:maxLines="1"
+                android:layout_marginTop="@dimen/dp_5"
+                app:layout_constraintStart_toEndOf="@+id/imgLocation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBookDetails"/>
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_10"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/gray2"
+                android:maxLines="1"
+                android:textAllCaps="true"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAddressDistance"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

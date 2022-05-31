@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.52"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:srcCompat="@drawable/login_logo"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline1"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/rounded_corner_top2_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_register"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/app_color"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginStart="@dimen/dp_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_to_Get"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                android:layout_marginStart="@dimen/dp_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtHeading"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgBack"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:srcCompat="@drawable/ic_cross"
+                android:padding="@dimen/dp_22"
+                android:onClick="onClick"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layButtons"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtContent"
+                app:layout_constraintBottom_toTopOf="@+id/layRegister">
+
+                <Button
+                    android:id="@+id/btnLoginAsUser"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_40"
+                    android:text="@string/login_as_user"
+                    android:textSize="@dimen/sp_15"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:onClick="onClick"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_marginHorizontal="@dimen/dp_50"
+                    android:background="@drawable/rounded_corner_appcolor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/layRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layButtons"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtDontHaveAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dont_have_account"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="@color/gray"
+                    android:fontFamily="@font/roboto_regular"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtSignup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/signup"
+                    android:textSize="@dimen/sp_12"
+                    android:onClick="onClick"
+                    android:paddingVertical="@dimen/dp_10"
+                    android:paddingHorizontal="@dimen/dp_5"
+                    android:textColor="@color/app_color"
+                    android:fontFamily="@font/roboto_bold"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

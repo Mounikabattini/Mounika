@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "683136828571",
+    "firebase_url": "https://bukish-7d60f-default-rtdb.firebaseio.com",
+    "project_id": "bukish-7d60f",
+    "storage_bucket": "bukish-7d60f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683136828571:android:3c53cee42f858ee40d323e",
+        "android_client_info": {
+          "package_name": "com.book.donation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683136828571-4tdg7ists4k8kpbuohm6jduv05gkopnq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.book.donation",
+            "certificate_hash": "49eafa4b3399294849290a6b6b5e2a18c7c12b92"
+          }
+        },
+        {
+          "client_id": "683136828571-kulaj58nkcifajo2kg6hfqojp0ihq6sd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCutYdkwPZ5JUPcjiRGZoI15oYcnCf59xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683136828571-kulaj58nkcifajo2kg6hfqojp0ihq6sd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

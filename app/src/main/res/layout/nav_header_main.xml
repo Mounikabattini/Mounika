@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:gravity="start"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <!--<ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/only_logo"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_18"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/app_name"
+        app:layout_constraintStart_toStartOf="@+id/imgLogo"
+        app:layout_constraintEnd_toEndOf="@+id/imgLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"/>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_50"
+        android:paddingBottom="@dimen/dp_20"
+        android:background="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgUser"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:src="@drawable/ic_account"
+            android:tint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtUserName"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/welcome"
+            android:layout_marginStart="@dimen/dp_30"
+            app:layout_constraintStart_toEndOf="@+id/imgUser"
+            app:layout_constraintTop_toTopOf="@+id/imgUser"
+            app:layout_constraintBottom_toTopOf="@+id/txtUserName"/>
+
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/robert_william"
+            android:layout_marginStart="@dimen/dp_30"
+            app:layout_constraintStart_toEndOf="@+id/imgUser"
+            app:layout_constraintTop_toBottomOf="@+id/txtWelcome"
+            app:layout_constraintBottom_toBottomOf="@+id/imgUser"/>
+
+        <ImageView
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginStart="@dimen/dp_30"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtWelcome"
+            app:layout_constraintBottom_toBottomOf="@+id/txtUserName"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItemList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consHeader"/>
+
+    <!--<ImageView
+        android:id="@+id/imgNavIcon"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:padding="@dimen/dp_7"
+        android:src="@drawable/ic_logout"
+        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/txtLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_18"
+        android:paddingHorizontal="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp_10"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/black"
+        android:text="@string/logout"
+        app:layout_constraintStart_toEndOf="@+id/imgNavIcon"
+        app:layout_constraintTop_toTopOf="@+id/imgNavIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/imgNavIcon"/>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

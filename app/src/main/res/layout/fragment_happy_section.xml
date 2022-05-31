@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txtHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/happy_section"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_10"
+            android:fontFamily="@font/roboto_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyHappyPersons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHeading"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            android:tint="@color/white"
+            app:elevation="10dp"
+            app:useCompatPadding="true"
+            android:backgroundTint="@color/app_color"
+            app:pressedTranslationZ="12dp"
+            app:fabSize="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

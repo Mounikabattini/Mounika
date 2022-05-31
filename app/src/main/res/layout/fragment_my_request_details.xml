@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/dp_10"
+                app:cardBackgroundColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_150"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:adjustViewBounds="true"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/ic_ask_help_new"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtRequestorName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_18"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/black"
+                android:paddingEnd="@dimen/dp_20"
+                android:maxLines="1"
+                android:textAllCaps="true"
+                android:layout_marginTop="@dimen/dp_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardImage"/>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:background="@drawable/shadow_gradiant_bottom"
+                android:layout_marginTop="@dimen/dp_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtRequestorName"/>
+
+            <LinearLayout
+                android:id="@+id/layRequestId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dp_15"
+                android:paddingVertical="@dimen/dp_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/request_id"
+                    android:textSize="@dimen/dp_15"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/gray4"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtRequestId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textSize="@dimen/dp_15"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/gray2"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layRequestId">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/category"
+                    android:textSize="@dimen/dp_15"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/gray4"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textSize="@dimen/dp_15"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/gray2"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/laySubCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dp_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layCategory">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/subcategory"
+                    android:textSize="@dimen/dp_15"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/gray4"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtSubCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:textSize="@dimen/dp_15"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/gray2"/>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consBookDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/laySubCategory">
+
+                <LinearLayout
+                    android:id="@+id/layBookCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/book_type"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtBookCategory"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layIsbn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layBookCategory">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/isbn_no1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtIsbn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layAuthor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layIsbn">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/author2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtAuthor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layCondition"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layAuthor">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/condition1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtCondition"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consFeesDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/consBookDetails">
+
+                <LinearLayout
+                    android:id="@+id/layFirstName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/first_name1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtFirstName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layLastName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layFirstName">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/last_name1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtLastName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layGradeLevelOrCollegeYear"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layLastName">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/grade_level1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtGradeLevelOrCollegeYear"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/laySchoolOrCollegeId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layGradeLevelOrCollegeYear">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/school_id1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtSchoolOrCollegeId"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/laySchoolOrCollegeName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/laySchoolOrCollegeId">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/school_name1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtSchoolOrCollegeName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/laySchoolOrCollegeAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/laySchoolOrCollegeName">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/school_address1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtSchoolOrCollegeAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layTermDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/laySchoolOrCollegeAddress">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/term_details1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtTermDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layParentName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layTermDetails">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/parent_name1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtParentName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layParentPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layParentName">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/parent_mobile1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtParentPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layParentEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layParentPhone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/parent_email1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtParentEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layFeeType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layParentEmail">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/fee_type"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtFeeType"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layFeeType">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/amount1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layAcName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layAmount">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/school_ac_name"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtAcName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layAcNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layAcName">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/school_ac_number"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtAcNumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layBankName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layAcNumber">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bank_name1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtBankName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layIFSC"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layBankName">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/ifsc_code1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtIFSC"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layDDOrChequeNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layIFSC">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/dd_check_no1"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtDDOrChequeNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layReason"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_5"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layDDOrChequeNo">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/reason"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray4"/>
+
+                    <TextView
+                        android:id="@+id/txtReason"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="@dimen/dp_15"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/gray2"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDescriptionHeading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textSize="@dimen/dp_15"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/gray4"
+                android:paddingEnd="@dimen/dp_20"
+                android:maxLines="1"
+                android:layout_marginTop="@dimen/dp_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/consFeesDetails"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_14"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/gray2"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescriptionHeading"/>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/gray1"
+                android:layout_marginTop="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescription"/>
+
+            <TextView
+                android:id="@+id/HeadingMiddle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/claim_person_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp_15"
+                android:fontFamily="@font/roboto_medium"
+                android:paddingVertical="@dimen/dp_4"
+                android:paddingHorizontal="@dimen/dp_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2"/>
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/gray1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/HeadingMiddle"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvClaimedPersonList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

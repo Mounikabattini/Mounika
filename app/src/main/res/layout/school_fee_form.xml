@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/dp_20"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/txtHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/school_fee_form"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/app_color"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginTop="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHeading">
+
+            <RadioButton
+                android:id="@+id/radioSchool"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:text="School"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:checked="true"
+                android:textSize="@dimen/sp_15" />
+
+            <RadioButton
+                android:id="@+id/radioCollege"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="College"
+                android:layout_gravity="center_horizontal"
+                android:checked="false"
+                android:textSize="@dimen/sp_15"
+                android:layout_weight="1" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/edtFirstName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:hint="@string/first_name"
+            style="@style/editTextFormViewStyle"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
+
+        <EditText
+            android:id="@+id/edtLastName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:hint="@string/last_name"
+            style="@style/editTextFormViewStyle"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtFirstName"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consCollegeStudent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtLastName">
+
+            <EditText
+                android:id="@+id/edtYear"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/college_year"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <EditText
+                android:id="@+id/edtCollegeId"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/college_id"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtYear"/>
+
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/phone_no"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtCollegeId"/>
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/email"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPhone"/>
+
+            <EditText
+                android:id="@+id/edtCourse"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/course_program"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmail"/>
+
+            <EditText
+                android:id="@+id/edtInstituteName"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/institute_name"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtCourse"/>
+
+            <EditText
+                android:id="@+id/edtInstituteAddress"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/institute_address"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtInstituteName"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consSchoolStudent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/consCollegeStudent">
+
+            <EditText
+                android:id="@+id/edtGrade"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/grade_level"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <EditText
+                android:id="@+id/edtSchoolId"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/school_id"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtGrade"/>
+
+            <EditText
+                android:id="@+id/edtSchoolName"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/school_name"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtSchoolId"/>
+
+            <EditText
+                android:id="@+id/edtSchoolAddress"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:hint="@string/school_address"
+                style="@style/editTextFormViewStyle"
+                android:inputType="text"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtSchoolName"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/edtTermDetails"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_100"
+            android:hint="@string/term_details"
+            style="@style/editFieldFormViewStyle"
+            android:inputType="text"
+            android:gravity="top"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:paddingVertical="@dimen/dp_10"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/consSchoolStudent"/>
+
+        <EditText
+            android:id="@+id/edtParentsName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:hint="@string/parent_name"
+            style="@style/editTextFormViewStyle"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtTermDetails"/>
+
+        <EditText
+            android:id="@+id/edtParentPhone"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:hint="@string/parent_mobile"
+            style="@style/editTextFormViewStyle"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtParentsName"/>
+
+        <EditText
+            android:id="@+id/edtParentEmail"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:hint="@string/parent_email"
+            style="@style/editTextFormViewStyle"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtParentPhone"/>
+
+        <Spinner
+            android:id="@+id/spinSchoolFeeType"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/rounded_corner_gray_border"
+            android:layout_marginTop="@dimen/dp_15"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtParentEmail"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgDownArrow"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            app:srcCompat="@drawable/ic_donw_arrow"
+            android:padding="@dimen/dp_14"
+            android:layout_marginEnd="@dimen/dp_5"
+            app:layout_constraintEnd_toEndOf="@+id/spinSchoolFeeType"
+            app:layout_constraintTop_toTopOf="@id/spinSchoolFeeType"/>
+
+        <EditText
+            android:id="@+id/edtFeeAmount"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:hint="@string/amount"
+            style="@style/editTextFormViewStyle"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spinSchoolFeeType"/>
+
+        <EditText
+            android:id="@+id/edtBankAcName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:hint="@string/bank_ac_name"
+            style="@style/editTextFormViewStyle"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtFeeAmount"/>
+
+        <EditText
+            android:id="@+id/edtBankAcNo"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:hint="@string/bank_ac_no"
+            style="@style/editTextFormViewStyle"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtBankAcName"/>
+
+        <EditText
+            android:id="@+id/edtBankName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:hint="@string/bank_name"
+            style="@style/editTextFormViewStyle"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtBankAcNo"/>
+
+        <EditText
+            android:id="@+id/edtIFSC"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:hint="@string/ifsc_code"
+            style="@style/editTextFormViewStyle"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtBankName"/>
+
+        <EditText
+            android:id="@+id/edtReasonOfHelp"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_100"
+            android:hint="@string/reason_of_seeking_help"
+            style="@style/editFieldFormViewStyle"
+            android:inputType="text"
+            android:gravity="top"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:paddingVertical="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtIFSC"/>
+
+        <CheckBox
+            android:id="@+id/chkCondition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/i_agree"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtReasonOfHelp"/>
+
+        <TextView
+            android:id="@+id/txtTermCondition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/term_condition"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/sp_15"
+            android:layout_marginStart="@dimen/dp_50"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:fontFamily="@font/roboto_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chkCondition"/>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_marginHorizontal="@dimen/dp_30"
+            android:background="@drawable/rounded_corner_appcolor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTermCondition"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

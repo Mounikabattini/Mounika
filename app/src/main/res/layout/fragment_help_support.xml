@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dp_10"
+        android:background="@color/white"
+        android:clickable="true">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtHelpHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/help_support"
+            android:textSize="@dimen/dp_15"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/black"
+            android:textAllCaps="true"
+            android:paddingHorizontal="@dimen/dp_2"
+            android:layout_marginTop="@dimen/dp_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/gray1"
+            android:layout_marginTop="@dimen/dp_5"
+            app:layout_constraintStart_toStartOf="@+id/txtHelpHeading"
+            app:layout_constraintEnd_toEndOf="@+id/txtHelpHeading"
+            app:layout_constraintTop_toBottomOf="@+id/txtHelpHeading"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtContactUs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_us"
+            android:textSize="@dimen/dp_15"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/app_color"
+            android:paddingHorizontal="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtCallUs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/call_us"
+            android:textSize="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_5"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/gray4"
+            android:paddingHorizontal="@dimen/dp_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtContactUs"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgCallUs"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            app:srcCompat="@drawable/ic_phone"
+            android:padding="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtContactUs"/>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/gray_3"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginHorizontal="@dimen/dp_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgCallUs"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtWriteUs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/write_us"
+            android:textSize="@dimen/dp_15"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/app_color"
+            android:paddingHorizontal="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtAvailable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/available_from"
+            android:textSize="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_2"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/gray4"
+            android:paddingHorizontal="@dimen/dp_5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtWriteUs"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgChatUs"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            app:srcCompat="@drawable/ic_write_us"
+            android:padding="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtWriteUs"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

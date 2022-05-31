@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_4"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consRoot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/dp_20"
+            android:paddingHorizontal="@dimen/dp_5"
+            android:clickable="true"
+            android:background="@color/gray_4">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dp_20"
+                android:text="Donor Shelf"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/roboto_bold"
+                android:maxLines="1"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSearch"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                app:cardCornerRadius="@dimen/dp_10"
+                app:cardElevation="@dimen/dp_6"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/dp_1"
+                    android:layout_marginHorizontal="@dimen/dp_1">
+
+                    <TextView
+                        android:id="@+id/txtSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="@dimen/dp_20"
+                        android:hint="@string/search_items"
+                        android:inputType="text"
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:gravity="center_vertical"
+                        android:fontFamily="@font/roboto_regular"
+                        android:maxLines="1"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imgSearch"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgSearch"
+                        android:layout_width="@dimen/dp_40"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/ic_search"
+                        android:padding="@dimen/dp_13"
+                        android:layout_marginEnd="@dimen/dp_5"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtBrowseCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/browse_category"
+                android:textSize="@dimen/sp_15"
+                android:textColor="@color/gray4"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardSearch"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtViewCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_all"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/app_color"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardSearch"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCatregory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtBrowseCategories"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtRecentDonatedItems"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recent_donate_item"
+                android:textSize="@dimen/sp_15"
+                android:textColor="@color/gray4"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvCatregory"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecentDonated"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_margin="@dimen/dp_5"
+                android:overScrollMode="never"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtRecentDonatedItems"/>
+
+            <ImageView
+                android:id="@+id/imgNoData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_no_data_found"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                android:layout_marginHorizontal="@dimen/dp_120"
+                android:layout_marginTop="@dimen/dp_80"
+                app:layout_constraintTop_toBottomOf="@+id/rvRecentDonated"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event"
+                android:textSize="@dimen/sp_15"
+                android:textColor="@color/gray4"
+                android:visibility="gone"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvRecentDonated"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ttxViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_all"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone"
+                android:textColor="@color/app_color"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/txtEvent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvEvent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_margin="@dimen/dp_5"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEvent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

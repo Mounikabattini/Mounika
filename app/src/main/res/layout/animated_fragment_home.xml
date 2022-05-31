@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/dp_10"
+    android:paddingBottom="@dimen/dp_40"
+    android:paddingHorizontal="@dimen/dp_20"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consDonerShelf"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_160"
+        android:layout_margin="@dimen/dp_15"
+        android:paddingVertical="@dimen/dp_20"
+        android:paddingHorizontal="@dimen/dp_15"
+        android:background="@drawable/rounded_pinkcard_dashboard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/consHelpRequest"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/consDonate">
+
+        <TextView
+            android:id="@+id/txtDonerHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/check_dorner_shelf"
+            android:textSize="@dimen/sp_15"
+            android:gravity="center"
+            android:textColor="@color/app_color"
+            android:fontFamily="@font/roboto_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtDonerMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/donor_shelf_section_text"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/gray2"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDonerHeading"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            app:srcCompat="@drawable/ic_doner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consHelpRequest"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_160"
+        android:layout_margin="@dimen/dp_15"
+        android:paddingVertical="@dimen/dp_20"
+        android:paddingHorizontal="@dimen/dp_15"
+        android:background="@drawable/rounded_pinkcard_dashboard"
+        app:layout_constraintStart_toEndOf="@+id/consDonerShelf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/consAskHelp">
+
+        <TextView
+            android:id="@+id/txtHelpRequestHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help_someone"
+            android:textSize="@dimen/sp_15"
+            android:gravity="center"
+            android:textColor="@color/app_color"
+            android:fontFamily="@font/roboto_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtHelpRequestMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/help_request_section_text"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/gray2"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHelpRequestHeading"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            app:srcCompat="@drawable/ic_help_request"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consDonate"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_160"
+        android:layout_marginHorizontal="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_25"
+        android:paddingVertical="@dimen/dp_20"
+        android:paddingHorizontal="@dimen/dp_15"
+        android:background="@drawable/rounded_pinkcard_dashboard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/consAskHelp"
+        app:layout_constraintTop_toBottomOf="@+id/consDonerShelf">
+
+        <TextView
+            android:id="@+id/txtDonateHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/donate"
+            android:textSize="@dimen/sp_14"
+            android:gravity="center"
+            android:textColor="@color/app_color"
+            android:fontFamily="@font/roboto_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtDonateMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/donate_section_text"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/gray2"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDonateHeading"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            app:srcCompat="@drawable/ic_donate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consAskHelp"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_160"
+        android:layout_marginHorizontal="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_25"
+        android:paddingVertical="@dimen/dp_20"
+        android:paddingHorizontal="@dimen/dp_15"
+        android:background="@drawable/rounded_pinkcard_dashboard"
+        app:layout_constraintStart_toEndOf="@+id/consDonate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consHelpRequest">
+
+        <TextView
+            android:id="@+id/txtAskHelpHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ask_help"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/app_color"
+            android:fontFamily="@font/roboto_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtAskHelpMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/ask_help_section_text"
+            android:textSize="@dimen/sp_10"
+            android:textColor="@color/gray2"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAskHelpHeading"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            app:srcCompat="@drawable/ic_ask_help"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consHappySection"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_160"
+        android:layout_marginTop="@dimen/dp_25"
+        android:layout_marginHorizontal="@dimen/dp_50"
+        android:paddingVertical="@dimen/dp_20"
+        android:paddingHorizontal="@dimen/dp_15"
+        android:background="@drawable/rounded_pinkcard_dashboard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/consDonate">
+
+        <TextView
+            android:id="@+id/txtHappyHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/happy_section"
+            android:textSize="@dimen/sp_14"
+            android:gravity="center"
+            android:textColor="@color/app_color"
+            android:fontFamily="@font/roboto_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txtHappyMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/happy_section_text"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/gray2"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgHappy"
+            app:layout_constraintTop_toBottomOf="@+id/txtHappyHeading"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgHappy"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            app:srcCompat="@drawable/ic_happy_icon"
+            android:layout_marginEnd="@dimen/dp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

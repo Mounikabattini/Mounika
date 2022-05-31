@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable name="index"
+            type="Integer" />
+
+        <!--<variable
+            name="item"
+            type="com.aamod.bukish.models.CategoryItemResBean" />-->
+
+        <variable name="OnItemClickListener"
+            type="com.book.donation.adapter.BookCategoryAdapter.ItemClickListener" />
+
+        <!--<import type="android.view.View" />-->
+
+        <!--<import type="com.medicalworld.extra.Constants" />-->
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layRoot"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:onClick="@{(view) -> OnItemClickListener.OnItemClicked(index)}">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            app:cardCornerRadius="@dimen/dp_40"
+            android:id="@+id/cardimg"
+            app:cardElevation="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dp_4"
+                android:src="@drawable/demo_profile"/>
+
+            <!--<androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dp_2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="@dimen/dp_80"
+                    android:padding="@dimen/dp_10">
+
+                    <ImageView
+                        android:id="@+id/imgItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/demo_profile"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/books"
+            android:textSize="@dimen/dp_12"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:paddingHorizontal="@dimen/dp_3"
+            android:paddingVertical="@dimen/dp_5"
+            android:gravity="center"
+            android:maxLines="2"
+            app:layout_constraintTop_toBottomOf="@+id/cardimg"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
